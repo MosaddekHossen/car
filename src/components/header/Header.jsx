@@ -30,13 +30,13 @@ const Header = () => {
                     Add Product
                 </NavLink>
             </li>
-            {/* <li>
-                <NavLink to={'/testimonial'}
+            <li>
+                <NavLink to={'/login'}
                     className={({ isActive, isPending }) =>
                         isPending ? 'pending' : isActive ? 'bg-[#a433aa] hover:text-blue-400 font-bold py-2 px-5 rounded-md text-white' : ''}                        >
-                    Testimonial
+                    Login
                 </NavLink>
-            </li> */}
+            </li>
             <li>
                 <NavLink to={'/blog'}
                     className={({ isActive, isPending }) =>
@@ -69,13 +69,13 @@ const Header = () => {
                     Add Product
                 </NavLink>
             </li>
-            {/* <li>
-                <NavLink to={'/testimonial'}
+            <li>
+                <NavLink to={'/login'}
                     className={({ isActive, isPending }) =>
                         isPending ? 'pending' : isActive ? 'bg-[#a433aa] hover:text-blue-400 font-bold py-2 px-5 rounded-md text-white' : ''}                        >
-                    Testimonial
+                    Login
                 </NavLink>
-            </li> */}
+            </li>
             <li>
                 <NavLink to={'/myCart'}
                     className={({ isActive, isPending }) =>
