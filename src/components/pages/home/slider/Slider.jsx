@@ -7,7 +7,7 @@ const Slider = () => {
         Aos.init();
     }, [])
     return (
-        <div className="max-w-7xl mx-auto lg:pt-10 pt-0 text-center" data-aos="fade-up">
+        <div className="max-w-7xl mx-auto lg:py-10 py-5 text-center" data-aos="fade-up">
             <h2 className="lg:text-5xl text-3xl font-bold pb-10">BRAND NEW</h2>
             <div className="carousel w-full h-[100vh]">
                 <div id="slide1" className="carousel-item relative w-full">
