@@ -27,21 +27,21 @@ const Header = () => {
                 <NavLink to={'/details/'}
                     className={({ isActive, isPending }) =>
                         isPending ? 'pending' : isActive ? 'bg-[#a433aa] hover:text-blue-400 font-bold py-2 px-5 rounded-md text-white' : ''}                        >
-                    Details
+                    Add Product
                 </NavLink>
             </li>
-            <li>
+            {/* <li>
                 <NavLink to={'/testimonial'}
                     className={({ isActive, isPending }) =>
                         isPending ? 'pending' : isActive ? 'bg-[#a433aa] hover:text-blue-400 font-bold py-2 px-5 rounded-md text-white' : ''}                        >
                     Testimonial
                 </NavLink>
-            </li>
+            </li> */}
             <li>
                 <NavLink to={'/blog'}
                     className={({ isActive, isPending }) =>
                         isPending ? 'pending' : isActive ? 'bg-[#a433aa] hover:text-blue-400 font-bold py-2 px-5 rounded-md text-white' : ''}                        >
-                    Blog
+                    My Cart
                 </NavLink>
             </li>
             <li>
@@ -66,21 +66,21 @@ const Header = () => {
                 <NavLink to={'/details/'}
                     className={({ isActive, isPending }) =>
                         isPending ? 'pending' : isActive ? 'bg-[#a433aa] my-3 hover:text-blue-400 font-bold py-2 px-5 rounded-md text-white' : ''}                        >
-                    Details
+                    Add Product
                 </NavLink>
             </li>
-            <li>
+            {/* <li>
                 <NavLink to={'/testimonial'}
                     className={({ isActive, isPending }) =>
                         isPending ? 'pending' : isActive ? 'bg-[#a433aa] hover:text-blue-400 font-bold py-2 px-5 rounded-md text-white' : ''}                        >
                     Testimonial
                 </NavLink>
-            </li>
+            </li> */}
             <li>
-                <NavLink to={'/blog'}
+                <NavLink to={'/myCart'}
                     className={({ isActive, isPending }) =>
                         isPending ? 'pending' : isActive ? 'bg-[#a433aa] hover:text-blue-400 font-bold py-2 px-5 rounded-md text-white' : ''}                        >
-                    Blog
+                    My Cart
                 </NavLink>
             </li>
             <li>
@@ -109,17 +109,17 @@ const Header = () => {
                 </div>
                 <div className="navbar-end">
                     {/* {user ? <> */}
-                        <div className="flex flex-col lg:flex-row justify-center text-center items-center">
-                            {/* <button onClick={handleLogout} className="btn btn-primary mx-3">Login Out</button> */}
-                            {/* <h3 className="font-bold text-green-500 mr-3">{user.displayName}</h3> */}
-                            <label tabIndex={0} className="btn btn-secondary btn-circle avatar">
-                                <div className="w-10 rounded-full">
-                                    {/* <img src={user.photoURL} /> */}
-                                </div>
-                            </label>
-                        </div>
+                    <div className="flex flex-col lg:flex-row justify-center text-center items-center">
+                        {/* <button onClick={handleLogout} className="btn btn-primary mx-3">Login Out</button> */}
+                        {/* <h3 className="font-bold text-green-500 mr-3">{user.displayName}</h3> */}
+                        <label tabIndex={0} className="btn btn-secondary btn-circle avatar">
+                            <div className="w-10 rounded-full">
+                                {/* <img src={user.photoURL} /> */}
+                            </div>
+                        </label>
+                    </div>
                     {/* </> */}
-                        {/* : <Link to={'/login'}><button className="btn btn-primary mr-3">Login</button></Link>} */}
+                    {/* : <Link to={'/login'}><button className="btn btn-primary mr-3">Login</button></Link>} */}
                 </div>
             </div>
         </div>
