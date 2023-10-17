@@ -1,42 +1,40 @@
 import { useContext } from "react"; //, useRef
 import { AuthContext } from "../../../provider/AuthProvider";
 // import Swal from "sweetalert2";
-// import { Link, useNavigate } from "react-router-dom";
-
-import { Link } from "react-router-dom"; //, Navigate
+import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const Login = () => {
-    const {  googleLogin } = useContext(AuthContext) //signInUser, resetEmail,
+    const { login, googleLogin } = useContext(AuthContext) //signInUser, resetEmail,
     // const emailRef = useRef(null);
-    // const navigate = useNavigate();
+    const navigate = useNavigate();
 
     // // Login User
-    // const handleLogin = (e) => {
-    //     e.preventDefault();
-    //     const email = e.target.email.value;
-    //     const password = e.target.password.value;
+    const handleLogin = (e) => {
+        e.preventDefault();
+        const email = e.target.email.value;
+        const password = e.target.password.value;
 
-    //     signInUser(email, password)
-    //         .then(res => {
-    //             console.log(res.user)
-    //             Swal.fire('Good job!', 'Success Sign In!', 'success')
-    //             e.target.reset();
-    //             navigate("/");
+        login(email, password)
+            .then(res => {
+                console.log(res.user)
+                Swal.fire('Good job!', 'Success Sign In!', 'success')
+                e.target.reset();
+                navigate("/");
 
-    //             // Verification email   
-    //             // if (res.user.emailVerified) {
-    //             //     Swal.fire('Good job!', 'Success Sign In!', 'success')
-    //             // }
-    //             // else {
-    //             //     Swal.fire('Good job!', 'Please verify your email address!', 'success')
-    //             // }
-    //         })
-    //         .catch(err => {
-    //             console.log(err.message)
-    //             Swal.fire('Oops!', err.message, 'error')
-    //         })
-    // }
+                // Verification email   
+                // if (res.user.emailVerified) {
+                //     Swal.fire('Good job!', 'Success Sign In!', 'success')
+                // }
+                // else {
+                //     Swal.fire('Good job!', 'Please verify your email address!', 'success')
+                // }
+            })
+            .catch(err => {
+                console.log(err.message)
+                Swal.fire('Oops!', err.message, 'error')
+            })
+    }
 
     // // Reset Email
     // const handleForgetPassword = () => {
@@ -67,7 +65,8 @@ const Login = () => {
     const handleGoogleLogin = () => {
         googleLogin()
             .then(() => {
-                Swal.fire('Good job!', 'Google Login Successful!', 'success'); //  Navigate("/");              
+                Swal.fire('Good job!', 'Google Login Successful!', 'success');
+                navigate('/');
             })
             .catch(err => Swal.fire('Good job!', err.message, 'error'))
     }
@@ -76,32 +75,32 @@ const Login = () => {
         <div className="justify-center my-20 flex">
             <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                 <div className="card-body">
-                    {/* <form onSubmit={handleLogin}> */}
-                    <div className="form-control">
-                        <label className="label">
-                            <span className="label-text">Email</span>
-                        </label>
-                        <input
-                            type="email"
-                            name="email"
-                            // ref={emailRef}
-                            placeholder="Email"
-                            className="input input-bordered"
-                            required />
-                    </div>
-                    <div className="form-control">
-                        <label className="label">
-                            <span className="label-text">Password</span>
-                        </label>
-                        <input type="password" name="password" placeholder="Password" className="input input-bordered" required />
-                        <label className="label">
-                            {/* <a href="#" onClick={handleForgetPassword} className="label-text-alt link link-hover">Forgot password?</a> */}
-                        </label>
-                    </div>
-                    <div className="form-control mt-6">
-                        <button className="btn btn-primary">Login</button>
-                    </div>
-                    {/* </form> */}
+                    <form onSubmit={handleLogin}>
+                        <div className="form-control">
+                            <label className="label">
+                                <span className="label-text">Email</span>
+                            </label>
+                            <input
+                                type="email"
+                                name="email"
+                                // ref={emailRef}
+                                placeholder="Email"
+                                className="input input-bordered"
+                                required />
+                        </div>
+                        <div className="form-control">
+                            <label className="label">
+                                <span className="label-text">Password</span>
+                            </label>
+                            <input type="password" name="password" placeholder="Password" className="input input-bordered" required />
+                            <label className="label">
+                                {/* <a href="#" onClick={handleForgetPassword} className="label-text-alt link link-hover">Forgot password?</a> */}
+                            </label>
+                        </div>
+                        <div className="form-control mt-6">
+                            <button className="btn btn-primary">Login</button>
+                        </div>
+                    </form>
                     <p>Don’t have an account? <Link to={'/register'}><button href="" className="text-amber-500 underline">Create an account</button></Link></p>
                     <div className="border-2 mt-3 p-2 rounded-full text-green-300">
                         <button className="flex items-center justify-between" onClick={handleGoogleLogin}>

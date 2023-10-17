@@ -14,8 +14,13 @@ const AuthProvider = ({ children }) => {
     }
 
     // Create User
-    const signIn = (email, password) => {
+    const signUp = (email, password) => {
         return createUserWithEmailAndPassword(auth, email, password);
+    }
+
+    // Login User
+    const login = (email, password) => {
+        return signInWithEmailAndPassword(auth, email, password);
     }
 
     // Logout User
@@ -37,7 +42,8 @@ const AuthProvider = ({ children }) => {
         googleLogin,
         user,
         logOutUser,
-        signIn
+        signUp,
+        login
     }
 
     return (

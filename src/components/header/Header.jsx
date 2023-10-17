@@ -31,13 +31,6 @@ const Header = () => {
                 </NavLink>
             </li>
             <li>
-                <NavLink to={'/login'}
-                    className={({ isActive, isPending }) =>
-                        isPending ? 'pending' : isActive ? 'bg-[#a433aa] hover:text-blue-400 font-bold py-2 px-5 rounded-md text-white' : ''}                        >
-                    Login
-                </NavLink>
-            </li>
-            <li>
                 <NavLink to={'/blog'}
                     className={({ isActive, isPending }) =>
                         isPending ? 'pending' : isActive ? 'bg-[#a433aa] hover:text-blue-400 font-bold py-2 px-5 rounded-md text-white' : ''}                        >
@@ -67,13 +60,6 @@ const Header = () => {
                     className={({ isActive, isPending }) =>
                         isPending ? 'pending' : isActive ? 'bg-[#a433aa] my-3 hover:text-blue-400 font-bold py-2 px-5 rounded-md text-white' : ''}                        >
                     Add Product
-                </NavLink>
-            </li>
-            <li>
-                <NavLink to={'/login'}
-                    className={({ isActive, isPending }) =>
-                        isPending ? 'pending' : isActive ? 'bg-[#a433aa] hover:text-blue-400 font-bold py-2 px-5 rounded-md text-white' : ''}                        >
-                    Login
                 </NavLink>
             </li>
             <li>
