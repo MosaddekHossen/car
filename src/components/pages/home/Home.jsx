@@ -1,3 +1,4 @@
+import Slider from "./slider/Slider";
 
 const Home = () => {
     const containerStyle = {
@@ -7,11 +8,14 @@ const Home = () => {
         backgroundPosition: 'center',
     };
     return (
+        <>
         <div style={containerStyle}>
             <div className="flex items-center justify-center h-[91vh] px-8 lg:px-0">
                 <h1 className="lg:text-5xl text-3xl text-white font-bold">Find Your Favorite Car In A Minute!</h1>
             </div>
         </div>
+        <Slider></Slider>
+        </>
     );
 };
 
