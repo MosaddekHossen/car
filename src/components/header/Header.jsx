@@ -24,14 +24,14 @@ const Header = () => {
                 </NavLink>
             </li>
             <li>
-                <NavLink to={'/details/'}
+                <NavLink to={'/addProduct'}
                     className={({ isActive, isPending }) =>
                         isPending ? 'pending' : isActive ? 'bg-[#a433aa] hover:text-blue-400 font-bold py-2 px-5 rounded-md text-white' : ''}                        >
                     Add Product
                 </NavLink>
             </li>
             <li>
-                <NavLink to={'/blog'}
+                <NavLink to={'/myCart'}
                     className={({ isActive, isPending }) =>
                         isPending ? 'pending' : isActive ? 'bg-[#a433aa] hover:text-blue-400 font-bold py-2 px-5 rounded-md text-white' : ''}                        >
                     My Cart
@@ -56,7 +56,7 @@ const Header = () => {
                 </NavLink>
             </li>
             <li>
-                <NavLink to={'/details/'}
+                <NavLink to={'/addProduct'}
                     className={({ isActive, isPending }) =>
                         isPending ? 'pending' : isActive ? 'bg-[#a433aa] my-3 hover:text-blue-400 font-bold py-2 px-5 rounded-md text-white' : ''}                        >
                     Add Product

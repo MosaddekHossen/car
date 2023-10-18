@@ -11,7 +11,7 @@ const Register = () => {
     const [showPassword, setShowPassword] = useState(false);
     const navigate = useNavigate();
 
-    const {signUp } = useContext(AuthContext);
+    const { signUp } = useContext(AuthContext);
     useEffect(() => {
         Aos.init();
     }, [])
@@ -56,18 +56,11 @@ const Register = () => {
                     .then(() => {
                         console.log("Update Profile!")
                         window.location.reload();
-                        // Swal.fire('Oops!', "Update Profile!", 'success')
                     })
                     .catch(err => {
                         Swal.fire('Oops!', err.message, 'error')
                         console.log(err.message)
                     })
-
-                // Send verification email                
-                // sendEmailVerification(res.user)
-                //     .then(() => {
-                //         Swal.fire('Good job!', 'Please check your email and verify your account!', 'success')
-                //     })
             })
             .catch(err => {
                 console.log(err.message)
