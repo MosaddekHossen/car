@@ -49,7 +49,7 @@ const AddProduct = () => {
                             <span className="label-text">Name</span>
                         </label>
                         <label>
-                            <input type="text" name="name" placeholder="Name" className="input input-bordered w-full" />
+                            <input type="text" required name="name" placeholder="Name" className="input input-bordered w-full" />
                         </label>
                     </div>
                     <div className="form-control md:w-1/2">
@@ -57,7 +57,7 @@ const AddProduct = () => {
                             <span className="label-text">Brand Name</span>
                         </label>
                         <label>
-                            <input type="text" name="brandName" placeholder="Brand Name" className="input input-bordered w-full" />
+                            <input type="text" required name="brandName" placeholder="Brand Name" className="input input-bordered w-full" />
                         </label>
                     </div>
                 </div>
@@ -68,7 +68,7 @@ const AddProduct = () => {
                             <span className="label-text">Type</span>
                         </label>
                         <label>
-                            <input type="text" name="type" placeholder="Type" className="input input-bordered w-full" />
+                            <input required type="text" name="type" placeholder="Type" className="input input-bordered w-full" />
                         </label>
                     </div>
                     <div className="form-control md:w-1/2">
@@ -76,7 +76,7 @@ const AddProduct = () => {
                             <span className="label-text">Price</span>
                         </label>
                         <label>
-                            <input type="number" name="price" placeholder="Price" className="input input-bordered w-full" />
+                            <input type="number" required name="price" placeholder="Price" className="input input-bordered w-full" />
                         </label>
                     </div>
                 </div>
@@ -87,7 +87,7 @@ const AddProduct = () => {
                             <span className="label-text">Short description</span>
                         </label>
                         <label>
-                            <input type="text" name="des" placeholder="Short description" className="input input-bordered w-full" />
+                            <input type="text" required name="des" placeholder="Short description" className="input input-bordered w-full" />
                         </label>
                     </div>
                     <div className="form-control md:w-1/2">
@@ -95,7 +95,7 @@ const AddProduct = () => {
                             <span className="label-text">Rating</span>
                         </label>
                         <label>
-                            <input type="text" name="rating" placeholder="Rating" className="input input-bordered w-full" />
+                            <input type="text" required name="rating" placeholder="Rating" className="input input-bordered w-full" />
                         </label>
                     </div>
                 </div>
@@ -105,10 +105,10 @@ const AddProduct = () => {
                         <span className="label-text">Image</span>
                     </label>
                     <label>
-                        <input type="text" name="image" placeholder="Image" className="input input-bordered w-full" />
+                        <input type="text" required name="image" placeholder="Image" className="input input-bordered w-full" />
                     </label>
                 </div>
-                <input type="submit" className="btn btn-block bg-gray-600 text-white hover:text-blue-600 font-bold" value="Add button" />
+                <input type="submit" className="btn btn-block bg-gray-600 text-white hover:text-blue-600 font-bold" value="Add Product" />
             </form>
         </div>
     );

@@ -1,8 +1,9 @@
+import { Link } from "react-router-dom";
 
 const card = ({ brand }) => {
     const { name, image } = brand || {};
     return (
-        <div>
+        <Link to={'/product'}>
             <div className="card shadow-xl h-[50vh]">
                 <figure className="px-2 pt-2">
                     <img src={image} alt="Car" className="rounded-xl h-[40vh]" />
@@ -11,7 +12,7 @@ const card = ({ brand }) => {
                     <h2 className="card-title">{name}</h2>
                 </div>
             </div>
-        </div>
+        </Link>
     );
 };
 

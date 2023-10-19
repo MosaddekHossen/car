@@ -1,6 +1,6 @@
 import Cards from "./cards/Cards";
+import Extra from "./extra/Extra";
 import SingleCar from "./singleCar/SingleCar";
-import Slider from "./slider/Slider";
 
 const Home = () => {
 
@@ -20,7 +20,7 @@ const Home = () => {
             </div>
             <SingleCar></SingleCar>
             <Cards></Cards>
-            <Slider></Slider>
+            <Extra></Extra>
         </>
     );
 };

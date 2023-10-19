@@ -2,7 +2,7 @@
 const SingleCar = () => {
     return (
         <div>
-            <div className="max-w-7xl mx-auto mt-20 text-center" data-aos="fade-up">
+            <div className="max-w-7xl mx-auto mt-20 text-center">
                 <h2 className="lg:text-5xl text-3xl font-bold">NEW CAR</h2>
                 <div className="hero min-h-screen">
                     <div className="hero-content flex-col lg:flex-row-reverse">
