@@ -21,7 +21,7 @@ const UpDateProduct = () => {
         // console.log(AddProduct);
 
         // Send data to the server
-        fetch(`http://localhost:3000/brand/${_id}`, {
+        fetch(`https://57-brand-shop-server-dcrbc5ziv-mosaddek.vercel.app/brand/${_id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

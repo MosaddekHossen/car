@@ -20,7 +20,7 @@ const Router = createBrowserRouter([
             {
                 path: '/',
                 element: <Home></Home>,
-                loader: () => fetch('http://localhost:3000/brand')
+                loader: () => fetch('https://57-brand-shop-server-dcrbc5ziv-mosaddek.vercel.app/brand')
             },
             {
                 path: '/addProduct',
@@ -29,22 +29,22 @@ const Router = createBrowserRouter([
             {
                 path: '/product',
                 element: <Product></Product>,
-                loader: () => fetch('http://localhost:3000/brand')
+                loader: () => fetch('https://57-brand-shop-server-dcrbc5ziv-mosaddek.vercel.app/brand')
             },
             {
                 path: `/brand/:id`,
                 element: <Private><Details></Details></Private>,
-                loader: ({ params }) => fetch(`http://localhost:3000/brand/${params.id}`)
+                loader: ({ params }) => fetch(`https://57-brand-shop-server-dcrbc5ziv-mosaddek.vercel.app/brand/${params.id}`)
             },
             {
                 path: '/updateBrand/:id',
                 element: <Private><UpDateProduct></UpDateProduct></Private>,
-                loader: ({ params }) => fetch(`http://localhost:3000/brand/${params.id}`)
+                loader: ({ params }) => fetch(`https://57-brand-shop-server-dcrbc5ziv-mosaddek.vercel.app/brand/${params.id}`)
             },
             {
                 path: '/myCart',
                 element: <Private><MyCart></MyCart></Private>,
-                loader: () => fetch('http://localhost:3000/brand')
+                loader: () => fetch('https://57-brand-shop-server-dcrbc5ziv-mosaddek.vercel.app/brand')
             },
             {
                 path: '/login',
