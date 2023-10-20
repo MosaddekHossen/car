@@ -1,5 +1,5 @@
 ========================
-Client-side live link => https://brand-shop-client-28f8e.web.app/myCart
+Client-side live link => https://brand-shop-client-28f8e.web.app/
 ========================
 
 About my project (at least 5 bullet points)
