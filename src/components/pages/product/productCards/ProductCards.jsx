@@ -1,7 +1,7 @@
 import { useLoaderData } from "react-router-dom";
 import ProductCard from "../productCard/ProductCard";
 
-const FourProducts = () => {
+const ProductCards = () => {
 
     const brands = useLoaderData();
 
@@ -16,4 +16,4 @@ const FourProducts = () => {
     );
 };
 
-export default FourProducts;
+export default ProductCards;

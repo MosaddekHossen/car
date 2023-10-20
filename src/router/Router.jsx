@@ -19,7 +19,7 @@ const Router = createBrowserRouter([
             {
                 path: '/',
                 element: <Home></Home>,
-                loader: () => fetch('http://localhost:3000/brand')
+                loader: () => fetch('https://57-brand-shop-server-myhdox2ey-mosaddek.vercel.app/brand')
             },
             {
                 path: '/addProduct',
@@ -28,16 +28,17 @@ const Router = createBrowserRouter([
             {
                 path: '/product',
                 element: <Product></Product>,
-                loader: () => fetch('http://localhost:3000/brand')
+                loader: () => fetch('https://57-brand-shop-server-myhdox2ey-mosaddek.vercel.app/brand')
             },
             {
                 path: `/details/:id`,
                 element: <Private><Details></Details></Private>,
-                loader: () => fetch('http://localhost:3000/brand')
+                loader: () => fetch('https://57-brand-shop-server-myhdox2ey-mosaddek.vercel.app/brand')
             },
             {
                 path: '/myCart',
-                element: <MyCart></MyCart>
+                element: <Private><MyCart></MyCart></Private>,
+                loader: () => fetch('https://57-brand-shop-server-myhdox2ey-mosaddek.vercel.app/brand')
             },
             {
                 path: '/login',

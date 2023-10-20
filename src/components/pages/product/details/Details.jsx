@@ -1,15 +1,15 @@
-import { element } from "prop-types";
-import { useLoaderData, useParams } from "react-router-dom";
+// import { element } from "prop-types";
+import { Link, useLoaderData } from "react-router-dom"; // , useParams
 import ReactStarsRating from 'react-stars-rating';
 
 const Details = () => {
     const detailsData = useLoaderData();
-    const { id } = useParams();
-    const numPara = parseInt(id)
+    // const { id } = useParams();
+    // const numPara = parseInt(id)
 
     const brand = detailsData.find(element => element)
-    const { name, brandName, type, price, des, rating, image } = brand || {};
-    console.log('one', numPara, 'three', brand, element)
+    const { name, brandName, type, price, des, rating } = brand || {}; // , image 
+    // console.log('one', numPara, 'three', brand, element)
 
     // const { id } = useParams();
     // const data = useLoaderData();
@@ -53,10 +53,9 @@ const Details = () => {
                     {/* <Link to={`/details/${  }`}> */}
                     <div className="md:mb-5">
                         <div className="form-control mb-2 lg:mb-0">
-                            <button>
+                            <Link to={'/myCart'}>
                                 <input type="submit" className="btn btn-block bg-gray-600 text-white hover:text-blue-600 font-bold" value="Add to Cart" />
-
-                            </button>
+                            </Link>
                         </div>
                     </div>
 
