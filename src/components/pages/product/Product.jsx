@@ -1,11 +1,11 @@
 import Slider from "../home/slider/Slider";
-import FourProducts from "./productCards/ProductCards";
+import ProductCards from "./productCards/ProductCards";
 
 const Product = () => {
     return (
         <div>
             <Slider></Slider>
-            <FourProducts></FourProducts>
+            <ProductCards></ProductCards>
         </div>
     );
 };

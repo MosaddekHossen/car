@@ -4,24 +4,14 @@ import ReactStarsRating from 'react-stars-rating';
 
 const Details = () => {
     const detailsData = useLoaderData();
-    // const { id } = useParams();
-    // const numPara = parseInt(id)
 
-    const brand = detailsData.find(element => element)
-    const { name, brandName, type, price, des, rating } = brand || {}; // , image 
-    // console.log('one', numPara, 'three', brand, element)
-
-    // const { id } = useParams();
-    // const data = useLoaderData();
-
-    // const card = data.find(element => element.id == id)
-    // const { description, name, price, } = card;
+    const { name, brandName, type, price, des, rating, image } = detailsData || {};
 
     return (
         <div>
             <div className="card shadow-xl h-full my-10">
                 <figure className="px-2 pt-2">
-                    <img src='https://demo.wpautolistings.com/wp-content/uploads/2018/07/benjamin-child-32498-unsplash-min-400x250.jpg' alt="Car" className="rounded-xl h-[80vh] w-full" />
+                    <img src={image} alt="Car" className="rounded-xl h-[80vh] w-full" />
                 </figure>
                 <div className="pt-10 pl-10">
                     <p>

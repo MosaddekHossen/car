@@ -9,6 +9,7 @@ import MyCart from '../components/pages/myCart/MyCart';
 import Private from '../components/private/Private';
 import Product from '../components/pages/product/Product';
 import Details from '../components/pages/product/details/Details'
+import UpDateProduct from '../components/pages/product/updateProduct/UpDateProduct';
 
 const Router = createBrowserRouter([
     {
@@ -19,7 +20,7 @@ const Router = createBrowserRouter([
             {
                 path: '/',
                 element: <Home></Home>,
-                loader: () => fetch('https://57-brand-shop-server-myhdox2ey-mosaddek.vercel.app/brand')
+                loader: () => fetch('http://localhost:3000/brand')
             },
             {
                 path: '/addProduct',
@@ -28,17 +29,22 @@ const Router = createBrowserRouter([
             {
                 path: '/product',
                 element: <Product></Product>,
-                loader: () => fetch('https://57-brand-shop-server-myhdox2ey-mosaddek.vercel.app/brand')
+                loader: () => fetch('http://localhost:3000/brand')
             },
             {
-                path: `/details/:id`,
+                path: `/brand/:id`,
                 element: <Private><Details></Details></Private>,
-                loader: () => fetch('https://57-brand-shop-server-myhdox2ey-mosaddek.vercel.app/brand')
+                loader: ({ params }) => fetch(`http://localhost:3000/brand/${params.id}`)
+            },
+            {
+                path: '/updateBrand/:id',
+                element: <Private><UpDateProduct></UpDateProduct></Private>,
+                loader: ({ params }) => fetch(`http://localhost:3000/brand/${params.id}`)
             },
             {
                 path: '/myCart',
                 element: <Private><MyCart></MyCart></Private>,
-                loader: () => fetch('https://57-brand-shop-server-myhdox2ey-mosaddek.vercel.app/brand')
+                loader: () => fetch('http://localhost:3000/brand')
             },
             {
                 path: '/login',

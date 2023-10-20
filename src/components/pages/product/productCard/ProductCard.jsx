@@ -5,7 +5,7 @@ import ReactStarsRating from 'react-stars-rating';
 
 const ProductCard = ({ brand }) => {
     const { _id, name, brandName, type, price, des, rating, image } = brand || {};
-    const num = parseInt(_id);
+
     return (
         <>
             <div className="card shadow-xl h-full">
@@ -42,7 +42,7 @@ const ProductCard = ({ brand }) => {
                     {/* <Link to={`/details/${  }`}> */}
                     <div className="md:flex gap-10 justify-between md:mb-5">
                         <div className="form-control md:w-1/2 mb-2 lg:mb-0">
-                            <Link to={`/details/${num}`}> <button
+                            <Link to={`/brand/${_id}`}> <button
                                 className="block w-full select-none rounded-lg bg-gray-300 py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-blue-gray-900 transition-all hover:scale-105 focus:scale-105 focus:opacity-[0.85] active:scale-100 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
                                 type="button"
                             >
@@ -50,7 +50,7 @@ const ProductCard = ({ brand }) => {
                             </button></Link>
                         </div>
                         <div className="form-control md:w-1/2">
-                            <Link to={``}> <button
+                            <Link to={`/updateBrand/${_id}`}> <button
                                 className="block w-full select-none rounded-lg bg-gray-500 text-white py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-blue-gray-900 transition-all hover:scale-105 focus:scale-105 focus:opacity-[0.85] active:scale-100 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
                                 type="button"
                             >

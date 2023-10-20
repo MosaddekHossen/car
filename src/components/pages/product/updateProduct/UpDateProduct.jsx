@@ -1,8 +1,13 @@
+import { useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
 
-const AddProduct = () => {
+const UpDateProduct = () => {
 
-    const handleAdd = event => {
+    const product = useLoaderData();
+    const { _id, name, brandName, type, price, des, rating, image } = product || {};
+
+
+    const handleUpdate = event => {
         event.preventDefault();
         const form = event.target;
         const name = form.name.value;
@@ -12,24 +17,24 @@ const AddProduct = () => {
         const des = form.des.value;
         const rating = form.rating.value;
         const image = form.image.value;
-        const AddProduct = { name, brandName, type, price, des, rating, image }
+        const updateProduct = { name, brandName, type, price, des, rating, image }
         // console.log(AddProduct);
 
         // Send data to the server
-        fetch('http://localhost:3000/brand', {
-            method: 'POST',
+        fetch(`http://localhost:3000/brand/${_id}`, {
+            method: 'PUT',
             headers: {
                 'content-type': 'application/json'
             },
-            body: JSON.stringify(AddProduct)
+            body: JSON.stringify(updateProduct)
         })
             .then(res => res.json())
             .then(data => {
                 console.log(data);
-                if (data.insertedId) {
+                if (data.modifiedCount > 0) {
                     Swal.fire({
                         title: 'Success!',
-                        text: 'Add product successfully!',
+                        text: 'Update product successfully!',
                         icon: 'success',
                         confirmButtonText: 'Cool'
                     })
@@ -40,8 +45,8 @@ const AddProduct = () => {
 
     return (
         <div className="my-14 max-w-5xl lg:px-24 px-10 py-14 rounded-md bg-[#F4F3F0] mx-auto text-center">
-            <h2 className="text-4xl font-extrabold pb-10">Add Product</h2>
-            <form onSubmit={handleAdd}>
+            <h2 className="text-4xl font-extrabold pb-10 text-blue-400">Update Product</h2>
+            <form onSubmit={handleUpdate}>
                 {/* Form row */}
                 <div className="md:flex gap-10 justify-between md:mb-5">
                     <div className="form-control md:w-1/2">
@@ -49,7 +54,7 @@ const AddProduct = () => {
                             <span className="label-text">Name</span>
                         </label>
                         <label>
-                            <input type="text" required name="name" placeholder="Name" className="input input-bordered w-full" />
+                            <input type="text" defaultValue={name} required name="name" placeholder="Name" className="input input-bordered w-full" />
                         </label>
                     </div>
                     <div className="form-control md:w-1/2">
@@ -57,7 +62,7 @@ const AddProduct = () => {
                             <span className="label-text">Brand Name</span>
                         </label>
                         <label>
-                            <input type="text" required name="brandName" placeholder="Brand Name" className="input input-bordered w-full" />
+                            <input type="text" defaultValue={brandName} required name="brandName" placeholder="Brand Name" className="input input-bordered w-full" />
                         </label>
                     </div>
                 </div>
@@ -68,7 +73,7 @@ const AddProduct = () => {
                             <span className="label-text">Type</span>
                         </label>
                         <label>
-                            <input required type="text" name="type" placeholder="Type" className="input input-bordered w-full" />
+                            <input defaultValue={type} required type="text" name="type" placeholder="Type" className="input input-bordered w-full" />
                         </label>
                     </div>
                     <div className="form-control md:w-1/2">
@@ -76,7 +81,7 @@ const AddProduct = () => {
                             <span className="label-text">Price</span>
                         </label>
                         <label>
-                            <input type="number" required name="price" placeholder="Price" className="input input-bordered w-full" />
+                            <input type="number" defaultValue={price} required name="price" placeholder="Price" className="input input-bordered w-full" />
                         </label>
                     </div>
                 </div>
@@ -87,7 +92,7 @@ const AddProduct = () => {
                             <span className="label-text">Short description</span>
                         </label>
                         <label>
-                            <input type="text" required name="des" placeholder="Short description" className="input input-bordered w-full" />
+                            <input type="text" defaultValue={des} required name="des" placeholder="Short description" className="input input-bordered w-full" />
                         </label>
                     </div>
                     <div className="form-control md:w-1/2">
@@ -95,7 +100,7 @@ const AddProduct = () => {
                             <span className="label-text">Rating</span>
                         </label>
                         <label>
-                            <input type="text" required name="rating" placeholder="Rating" className="input input-bordered w-full" />
+                            <input type="text" defaultValue={rating} required name="rating" placeholder="Rating" className="input input-bordered w-full" />
                         </label>
                     </div>
                 </div>
@@ -105,13 +110,13 @@ const AddProduct = () => {
                         <span className="label-text">Image</span>
                     </label>
                     <label>
-                        <input type="text" required name="image" placeholder="Image" className="input input-bordered w-full" />
+                        <input type="text" defaultValue={image} required name="image" placeholder="Image" className="input input-bordered w-full" />
                     </label>
                 </div>
-                <input type="submit" className="btn btn-block bg-gray-600 text-white hover:text-blue-600 font-bold" value="Add Product" />
+                <input type="submit" className="btn btn-block bg-gray-600 text-indigo-400 hover:text-blue-600 font-bold" value="Update Product" />
             </form>
         </div>
     );
 };
 
-export default AddProduct;
+export default UpDateProduct;

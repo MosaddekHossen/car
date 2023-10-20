@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import ReactStarsRating from 'react-stars-rating';
 import Swal from 'sweetalert2';
 
-const CartCard = ({ brand }) => {
+const CartCard = ({ brand, brands, setBrands }) => {
     const { _id, name, brandName, type, price, des, rating, image } = brand || {};
 
     const handleDelete = _id => {
@@ -30,6 +30,8 @@ const CartCard = ({ brand }) => {
                                 'Your Brand has been deleted.',
                                 'success'
                             )
+                            const remaining = brands.filter(brand => brand._id !== _id);
+                            setBrands(remaining);
                         }
                     })
             }
@@ -89,7 +91,9 @@ const CartCard = ({ brand }) => {
 };
 
 CartCard.propTypes = {
-    brand: PropTypes.node
+    brand: PropTypes.node,
+    brands: PropTypes.node,
+    setBrands: PropTypes.node
 }
 
 export default CartCard;
