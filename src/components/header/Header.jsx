@@ -120,16 +120,12 @@ const Header = () => {
                 <div className="navbar-end">
 
                     {/* Dark Mode button */}
-                    <div className="form-control">
-                        <label className="label cursor-pointer">
-                            <input
-                                type="checkbox"
-                                className="toggle"
-                                checked={isDarkMode}
-                                onChange={handleToggle}
-                            />
-                        </label>
-                    </div>
+                    <input
+                        type="checkbox"
+                        className="toggle mx-2"
+                        checked={isDarkMode}
+                        onChange={handleToggle}
+                    />
 
                     {user ? <>
                         <div className="flex flex-col lg:flex-row justify-center text-center items-center">
