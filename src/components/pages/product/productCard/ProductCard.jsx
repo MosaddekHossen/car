@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import ReactStarsRating from 'react-stars-rating';
 
 const ProductCard = ({ brand }) => {
-    const { _id, name, brandName, type, price, des, rating, image } = brand || {};
+    const { _id, name, brandName, type, price, rating, image } = brand || {};
 
     return (
         <>
@@ -20,23 +20,20 @@ const ProductCard = ({ brand }) => {
                     </p>
                 </div>
                 <p className="mx-6 p-1 font-sans text-[18px] font-semibold leading-normal text-[#171715] antialiased opacity-75">
-                    {brandName}
+                    Name: {name}
                 </p>
                 <p className="mx-6 p-1 mt-3 font-sans text-[18px] font-semibold leading-normal text-[#171715] antialiased opacity-75">
-                    {name}
+                    Brand Name: {brandName}
                 </p>
                 <div className="p-6">
                     <div className="mb-2 flex items-center justify-between">
                         <p className="block font-sans text-base font-medium leading-relaxed text-blue-gray-900 antialiased">
-                            {type}
+                            Type: {type}
                         </p>
                         <p className="block font-sans text-base font-medium leading-relaxed text-blue-gray-900 antialiased">
-                            {price} $
+                            Price: {price}$
                         </p>
                     </div>
-                    <p className="block font-sans text-sm font-normal leading-normal text-gray-700 antialiased opacity-75">
-                        {des}
-                    </p>
                 </div>
                 <div className="p-6 pt-0">
                     {/* <Link to={`/details/${  }`}> */}
