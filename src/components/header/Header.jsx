@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { Link } from 'react-router-dom';
 import { AuthContext } from "../../provider/AuthProvider";
@@ -6,6 +6,7 @@ import Swal from "sweetalert2";
 
 const Header = () => {
     const { user, logOutUser } = useContext(AuthContext);
+    const [isDarkMode, setIsDarkMode] = useState(false);
 
     // LogOut
     const handleLogout = () => {
@@ -78,10 +79,33 @@ const Header = () => {
             </li>
         </ul>
     </>
+
+    // Dark Mode
+    useEffect(() => {
+        const savedTheme = localStorage.getItem("theme");
+        if (savedTheme) {
+            setIsDarkMode(savedTheme === "dark");
+        } else {
+            setIsDarkMode(document.documentElement.getAttribute("data-theme") === "dark");
+        }
+    }, []);
+
+    const toggleDarkMode = () => {
+        const newTheme = isDarkMode ? "light" : "dark";
+        setIsDarkMode(!isDarkMode);
+        document.documentElement.setAttribute("data-theme", newTheme);
+        localStorage.setItem("theme", newTheme);
+    };
+
+    const handleToggle = () => {
+        toggleDarkMode();
+    };
+
     return (
         <div className="max-w-7xl mx-auto sticky top-0 z-50">
             <div className="navbar">
                 <div className="navbar-start">
+
                     <div className="dropdown">
                         <label tabIndex={0} className="btn btn-ghost lg:hidden">
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-10 text-white bg-slate-600 font-black w-8 rounded-lg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h8m-8 6h16" /></svg>
@@ -94,6 +118,19 @@ const Header = () => {
                     {navLink}
                 </div>
                 <div className="navbar-end">
+
+                    {/* Dark Mode button */}
+                    <div className="form-control">
+                        <label className="label cursor-pointer">
+                            <input
+                                type="checkbox"
+                                className="toggle"
+                                checked={isDarkMode}
+                                onChange={handleToggle}
+                            />
+                        </label>
+                    </div>
+
                     {user ? <>
                         <div className="flex flex-col lg:flex-row justify-center text-center items-center">
                             <button onClick={handleLogout} className="btn btn-primary mx-3">Login Out</button>
