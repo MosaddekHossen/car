@@ -1,5 +1,5 @@
-import Slider from "./slider/Slider";
 import ProductCards from "./productCards/ProductCards";
+import Slider from "./slider/Slider";
 
 const Product = () => {
     return (

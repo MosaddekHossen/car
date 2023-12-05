@@ -1,5 +1,5 @@
+import { Rating } from '@smastrom/react-rating';
 import PropTypes from 'prop-types';
-import ReactStarsRating from 'react-stars-rating';
 import Swal from 'sweetalert2';
 
 const CartCard = ({ brand, brands, setBrands }) => {
@@ -42,16 +42,16 @@ const CartCard = ({ brand, brands, setBrands }) => {
         <>
             <div className="card shadow-xl h-full">
                 <figure className="px-2 pt-2">
-                    <img src={image} alt="Car" className="rounded-xl w-full object-cover h-[30vh]" />
+                    <img src={image} alt="Car" className="rounded-xl h-[40vh]" />
                 </figure>
-                <div className="pt-10 pl-10">
-                    <p>
-                        <ReactStarsRating
-                            value={rating}
-                        />
-                    </p>
+                <div className="pt-3 pl-5 pb-2">
+                    <Rating
+                        style={{ maxWidth: 180 }}
+                        value={rating}
+                        readOnly
+                    />
                 </div>
-                <p className="mx-6 p-1 font-sans text-[18px] font-semibold leading-normal text-[#171715] antialiased opacity-75">
+                <p className="mx-6 p-1 font-sans text-[18px] text-[#171715]">
                     Name: {name}
                 </p>
                 <p className="mx-6 p-1 mt-3 font-sans text-[18px] font-semibold leading-normal text-[#171715] antialiased opacity-75">
@@ -66,7 +66,7 @@ const CartCard = ({ brand, brands, setBrands }) => {
                             Price: {price}$
                         </p>
                     </div>
-                    <p className="block font-sans text-sm font-normal leading-normal text-gray-700 antialiased opacity-75">
+                    <p className="block font-sans font-normal text-black leading-relaxed text-blue-gray-900">
                         {des}
                     </p>
                 </div>
@@ -75,7 +75,7 @@ const CartCard = ({ brand, brands, setBrands }) => {
                         <div className="form-control">
                             <button
                                 onClick={() => handleDelete(_id)}
-                                className="block w-full select-none rounded-lg bg-gray-300 py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-blue-gray-900 transition-all hover:scale-105 focus:scale-105 focus:opacity-[0.85] active:scale-100 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+                                className="block w-full text-gray-90000 rounded-lg bg-red-400 hover:text-white py-3 px-6"
                                 type="button"
                             >
                                 Delete

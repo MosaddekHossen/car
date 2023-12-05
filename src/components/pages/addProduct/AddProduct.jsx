@@ -86,9 +86,10 @@ const AddProduct = () => {
                         <label className="label">
                             <span className="label-text">Short description</span>
                         </label>
-                        <label>
-                            <input type="text" required name="des" placeholder="Short description" className="input input-bordered w-full" />
-                        </label>
+                        {/* <label>
+                            <input type="text"  name="" className="input input-bordered w-full" />
+                        </label> */}
+                        <textarea name="des" className="border-none border-slate-200 p-2" required id="des" placeholder="Short description" cols="20" rows="5"></textarea>
                     </div>
                     <div className="form-control md:w-1/2">
                         <label className="label">

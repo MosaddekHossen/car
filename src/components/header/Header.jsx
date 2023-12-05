@@ -1,16 +1,16 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../provider/AuthProvider";
 import Swal from "sweetalert2";
 
 const Header = () => {
-    const { user, logOut } = useContext(AuthContext)
+    const { user, logOutUser } = useContext(AuthContext)
     const [isOpen, setIsOpen] = useState(false);
-    const [isDarkMode, setIsDarkMode] = useState(false);
+    // const [isDarkMode, setIsDarkMode] = useState(false);
 
     // Sign Out
     const handleLogout = () => {
-        logOut()
+        logOutUser()
             .then(() => Swal.fire('Oops!', 'LogOut Successful!', 'success'))
             .catch((err) => Swal.fire('Oops!', err.message, 'error'))
     }
@@ -18,22 +18,22 @@ const Header = () => {
     const navLink = <>
         <ul className="menu menu-horizontal px-1 lg:flex gap-1 hidden">
             <NavLink to={'/'}
-                className={({ isActive }) => isActive ? "btn bg-[#fff] text-[16px] font-semibold" : "btn bg-[#555d6655] text-white text-[16px] font-semibold"}>
+                className={({ isActive }) => isActive ? "btn bg-[#fff] text-[14px] font-semibold" : "btn bg-[#555d6655] text-white text-[14px] font-semibold"}>
                 Home
             </NavLink>
 
             <NavLink to={'/addProduct'}
-                className={({ isActive }) => isActive ? "btn bg-[#fff] text-[16px] font-semibold" : "btn bg-[#555d6655] text-white text-[16px] font-semibold"}                        >
+                className={({ isActive }) => isActive ? "btn bg-[#fff] text-[14px] font-semibold" : "btn bg-[#555d6655] text-white text-[14px] font-semibold"}                        >
                 Add Product
             </NavLink>
 
             <NavLink to={'/myCart'}
-                className={({ isActive }) => isActive ? "btn bg-[#fff] text-[16px] font-semibold" : "btn bg-[#555d6655] text-white text-[16px] font-semibold"}                        >
+                className={({ isActive }) => isActive ? "btn bg-[#fff] text-[14px] font-semibold" : "btn bg-[#555d6655] text-white text-[14px] font-semibold"}                        >
                 My Cart
             </NavLink>
 
             <NavLink to={'/register'}
-                className={({ isActive }) => isActive ? "btn bg-[#fff] text-[16px] font-semibold" : "btn bg-[#555d6655] text-white text-[16px] font-semibold"}                        >
+                className={({ isActive }) => isActive ? "btn bg-[#fff] text-[14px] font-semibold" : "btn bg-[#555d6655] text-white text-[14px] font-semibold"}                        >
                 Register
             </NavLink>
         </ul>
@@ -42,47 +42,47 @@ const Header = () => {
     const navLinkMd = <>
         <ul className="menu menu-sm dropdown-content mt-3 z-[1] flex gap-3 shadow rounded-box w-52 bg-slate-400 p-5 text-white">
             <NavLink to={'/'}
-                className={({ isActive }) => isActive ? "btn bg-[#fff] text-[16px] font-semibold" : "btn bg-[#555d6655] text-white text-[16px] font-semibold"}>
+                className={({ isActive }) => isActive ? "btn bg-[#fff] text-[14px] font-semibold" : "btn bg-[#555d6655] text-white text-[14px] font-semibold"}>
                 Home
             </NavLink>
 
             <NavLink to={'/addProduct'}
-                className={({ isActive }) => isActive ? "btn bg-[#fff] text-[16px] font-semibold" : "btn bg-[#555d6655] text-white text-[16px] font-semibold"}                        >
+                className={({ isActive }) => isActive ? "btn bg-[#fff] text-[14px] font-semibold" : "btn bg-[#555d6655] text-white text-[14px] font-semibold"}                        >
                 Add Product
             </NavLink>
 
             <NavLink to={'/myCart'}
-                className={({ isActive }) => isActive ? "btn bg-[#fff] text-[16px] font-semibold" : "btn bg-[#555d6655] text-white text-[16px] font-semibold"}                        >
+                className={({ isActive }) => isActive ? "btn bg-[#fff] text-[14px] font-semibold" : "btn bg-[#555d6655] text-white text-[14px] font-semibold"}                        >
                 My Cart
             </NavLink>
 
             <NavLink to={'/register'}
-                className={({ isActive }) => isActive ? "btn bg-[#fff] text-[16px] font-semibold" : "btn bg-[#555d6655] text-white text-[16px] font-semibold"}                        >
+                className={({ isActive }) => isActive ? "btn bg-[#fff] text-[14px] font-semibold" : "btn bg-[#555d6655] text-white text-[14px] font-semibold"}                        >
                 Register
             </NavLink>
         </ul>
     </>
 
     // Dark Mode
-    useEffect(() => {
-        const savedTheme = localStorage.getItem("theme");
-        if (savedTheme) {
-            setIsDarkMode(savedTheme === "dark");
-        } else {
-            setIsDarkMode(document.documentElement.getAttribute("data-theme") === "dark");
-        }
-    }, []);
+    // useEffect(() => {
+    //     const savedTheme = localStorage.getItem("theme");
+    //     if (savedTheme) {
+    //         setIsDarkMode(savedTheme === "dark");
+    //     } else {
+    //         setIsDarkMode(document.documentElement.getAttribute("data-theme") === "dark");
+    //     }
+    // }, []);
 
-    const toggleDarkMode = () => {
-        const newTheme = isDarkMode ? "light" : "dark";
-        setIsDarkMode(!isDarkMode);
-        document.documentElement.setAttribute("data-theme", newTheme);
-        localStorage.setItem("theme", newTheme);
-    };
+    // const toggleDarkMode = () => {
+    //     const newTheme = isDarkMode ? "light" : "dark";
+    //     setIsDarkMode(!isDarkMode);
+    //     document.documentElement.setAttribute("data-theme", newTheme);
+    //     localStorage.setItem("theme", newTheme);
+    // };
 
-    const handleToggle = () => {
-        toggleDarkMode();
-    };
+    // const handleToggle = () => {
+    //     toggleDarkMode();
+    // };
 
     return (
         <div className="max-w-7xl mx-auto sticky top-0 z-50 bg-[#8e8e945a]">
@@ -101,12 +101,12 @@ const Header = () => {
                 </div>
                 <div className="lg:navbar-end lg:w-auto w-3/1">
                     {/* Dark Mode button */}
-                    <input
+                    {/* <input
                         type="checkbox"
                         className="toggle mx-2"
                         checked={isDarkMode}
                         onChange={handleToggle}
-                    />
+                    /> */}
 
                     <div onClick={() => setIsOpen(!isOpen)}>
                         {
@@ -123,7 +123,7 @@ const Header = () => {
 
                             </>
                                 : <NavLink to={'/login'}
-                                    className={({ isActive }) => isActive ? "btn bg-[#fff] text-[16px] font-semibold" : "md:btn bg-[#555d6655] text-white md:text-[16px] text-[18px] font-semibold"}                        >
+                                    className={({ isActive }) => isActive ? "btn bg-[#fff] text-[14px] font-semibold" : "btn bg-[#555d6655] text-white text-[14px] font-semibold"}                      >
                                     Sign In
                                 </NavLink>
                         }
@@ -131,8 +131,8 @@ const Header = () => {
                     {user && isOpen && (
                         <div className='absolute rounded-xl shadow-md w-[40vw] p-2 md:p-2 lg:w-[10vw] mr-2 md:w-[20vw] bg-[#756d7555] right-0 top-20'>
                             <div className='flex flex-col justify-center items-center'>
-                                <h3 className="font-bold text-center dark:text-white text-red-700 disabled">{user?.displayName}</h3>
-                                <button onClick={handleLogout} className="lg:px-5 px-3 mt-2 hover:bg-gray-500 text-white lg:mt-3 rounded-lg text-[16px] font-bold py-3  bg-violet-400">Login Out</button>
+                                <h3 className="font-bold text-center text-slate-700 disabled">{user?.displayName}</h3>
+                                <button onClick={handleLogout} className="lg:px-5 px-3 mt-2 hover:bg-gray-500 text-white lg:mt-3 rounded-lg text-[14px] font-bold py-3  bg-violet-400">Login Out</button>
                             </div>
                         </div>
                     )}

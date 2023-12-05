@@ -20,18 +20,18 @@ const ProductCard = ({ brand }) => {
                         readOnly
                     />
                 </div>
-                <p className="mx-6 p-1 font-sans text-[18px] font-semibold leading-normal text-[#171715] dark:text-white antialiased opacity-75">
+                <p className="mx-6 p-1 font-sans text-[18px] font-semibold leading-normal text-[#171715]">
                     Name: {name}
                 </p>
-                <p className="mx-6 p-1 mt-3 font-sans text-[18px] font-semibold leading-normal text-[#171715] dark:text-white antialiased opacity-75">
+                <p className="mx-6 p-1 mt-3 font-sans text-[18px] font-semibold leading-normal text-[#171715]">
                     Brand Name: {brandName}
                 </p>
                 <div className="p-6">
                     <div className="mb-2 flex items-center justify-between">
-                        <p className="block font-sans text-base font-medium dark:text-white leading-relaxed text-blue-gray-900 antialiased">
+                        <p className="block font-sans text-base font-medium text-blue-gray-900">
                             Type: {type}
                         </p>
-                        <p className="block font-sans text-base font-medium dark:text-white leading-relaxed text-blue-gray-900 antialiased">
+                        <p className="block font-sans text-base font-medium text-blue-gray-900">
                             Price: {price}$
                         </p>
                     </div>

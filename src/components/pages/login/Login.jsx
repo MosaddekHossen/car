@@ -36,7 +36,7 @@ const Login = () => {
                 // navigate('/');
                 navigate(location?.state ? location?.state : '/');
             })
-            .catch(err => Swal.fire('Good job!', err.message, 'error'))
+            .catch(err => Swal.fire('Error!', err.message, 'error'))
     }
 
     return (
@@ -68,7 +68,7 @@ const Login = () => {
                             <button className="btn btn-primary">Login</button>
                         </div>
                     </form>
-                    <p>Don’t have an account? <Link to={'/register'}><button href="" className="text-amber-500 underline">Create an account</button></Link></p>
+                    <p>Don not have an account? <Link to={'/register'}><button href="" className="text-amber-500 underline">Create an account</button></Link></p>
                     <div className="border-2 mt-3 p-2 rounded-full text-green-300">
                         <button className="flex items-center justify-between" onClick={handleGoogleLogin}>
                             <div><svg xmlns="http://www.w3.org/2000/svg" width="31" height="32" viewBox="0 0 31 32" fill="none">
