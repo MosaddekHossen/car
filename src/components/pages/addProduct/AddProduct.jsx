@@ -39,8 +39,8 @@ const AddProduct = () => {
     }
 
     return (
-        <div className="my-14 max-w-5xl lg:px-24 px-10 py-14 rounded-md bg-[#F4F3F0] mx-auto text-center">
-            <h2 className="text-4xl font-extrabold pb-10">Add Product</h2>
+        <div className="my-14 max-w-5xl lg:px-24 px-10 md:py-14 py-10 rounded-md bg-[#F4F3F0] mx-auto text-center">
+            <h2 className="md:text-4xl font-extrabold text-blue-500 pb-10 text-2xl">Add Product</h2>
             <form onSubmit={handleAdd}>
                 {/* Form row */}
                 <div className="md:flex gap-10 justify-between md:mb-5">
@@ -86,9 +86,6 @@ const AddProduct = () => {
                         <label className="label">
                             <span className="label-text">Short description</span>
                         </label>
-                        {/* <label>
-                            <input type="text"  name="" className="input input-bordered w-full" />
-                        </label> */}
                         <textarea name="des" className="border-none border-slate-200 p-2" required id="des" placeholder="Short description" cols="20" rows="5"></textarea>
                     </div>
                     <div className="form-control md:w-1/2">

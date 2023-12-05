@@ -37,7 +37,6 @@ const ProductCard = ({ brand }) => {
                     </div>
                 </div>
                 <div className="p-6 pt-0">
-                    {/* <Link to={`/details/${  }`}> */}
                     <div className="md:flex gap-10 justify-between md:mb-5">
                         <div className="form-control md:w-1/2 mb-2 lg:mb-0">
                             <Link to={`/brand/${_id}`}> <button

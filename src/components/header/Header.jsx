@@ -130,7 +130,7 @@ const Header = () => {
                     </div>
                     {user && isOpen && (
                         <div className='absolute rounded-xl shadow-md w-[40vw] p-2 md:p-2 lg:w-[10vw] mr-2 md:w-[20vw] bg-[#756d7555] right-0 top-20'>
-                            <div className='flex flex-col justify-center items-center'>
+                            <div className='flex flex-col py-2 justify-center items-center'>
                                 <h3 className="font-bold text-center text-slate-700 disabled">{user?.displayName}</h3>
                                 <button onClick={handleLogout} className="lg:px-5 px-3 mt-2 hover:bg-gray-500 text-white lg:mt-3 rounded-lg text-[14px] font-bold py-3  bg-violet-400">Login Out</button>
                             </div>
