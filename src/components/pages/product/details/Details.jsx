@@ -11,9 +11,9 @@ const Details = () => {
         <div>
             <div className="card shadow-xl w-10/12 mx-auto h-full my-10">
                 <figure className="px-2 pt-2">
-                    <img src={image} alt="Car" className="rounded-xl h-[60vh]" />
+                    <img src={image} alt="Car" className="rounded-xl object-cover h-[30vh] md:h-[60vh]" />
                 </figure>
-                <div className="pt-1 pl-5 pb-2">
+                <div className="pt-2 pl-5 pb-2">
                     <Rating
                         style={{ maxWidth: 180 }}
                         value={rating}

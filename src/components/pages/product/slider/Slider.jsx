@@ -10,7 +10,7 @@ const Slider = () => {
 
     return (
         <div className="max-w-7xl mx-auto lg:py-10 py-5 text-center" data-aos="fade-up">
-            <h2 className="lg:text-5xl text-3xl font-bold pb-10">BRAND NEW</h2>
+            <h2 className="lg:text-5xl text-3xl font-bold md:py-8 py-5">BRAND NEW</h2>
             <div className="carousel w-full h-[100vh]">
                 <div id="slide1" className="carousel-item relative w-full">
                     <img className="object-cover w-full" src="https://img.freepik.com/free-photo/cyberpunk-urban-scenery-with-car_23-2150712270.jpg?t=st=1701799693~exp=1701803293~hmac=32ff1148753e107bba683d058795e79b5e5ef6b9e3144994f9dee2bd45e514cd&w=1060" />
