@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 
 const SingleCar = () => {
     return (
@@ -8,9 +9,9 @@ const SingleCar = () => {
                     <div className="hero-content flex-col lg:flex-row-reverse">
                         <img src="https://demo.wpautolistings.com/wp-content/uploads/2018/07/all-cars.png" />
                         <div>
-                            <h1 className="text-5xl font-bold">Browse Cars By Make</h1>
-                            <p className="py-6">cars available in different categories. Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
-                            <button className="btn btn-ghost bg-violet-400">SEE ALL CARS</button>
+                            <h1 className="text-5xl font-bold">New Car Models Prices</h1>
+                            <p className="py-6">Find the perfect car for your needs at Cars.com. Shop new and used cars, sell your car, compare prices, and explore financing options to find your dream car ...</p>
+                            <Link to={"/myCart"}><button className="btn btn-ghost bg-violet-400 dark:text-black">SEE ALL CARS</button></Link>
                         </div>
                     </div>
                 </div>

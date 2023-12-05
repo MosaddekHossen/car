@@ -1,82 +1,65 @@
 import { useContext, useEffect, useState } from "react";
-import { NavLink } from "react-router-dom";
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../provider/AuthProvider";
 import Swal from "sweetalert2";
 
 const Header = () => {
-    const { user, logOutUser } = useContext(AuthContext);
+    const { user, logOut } = useContext(AuthContext)
+    const [isOpen, setIsOpen] = useState(false);
     const [isDarkMode, setIsDarkMode] = useState(false);
 
-    // LogOut
+    // Sign Out
     const handleLogout = () => {
-        logOutUser()
+        logOut()
             .then(() => Swal.fire('Oops!', 'LogOut Successful!', 'success'))
             .catch((err) => Swal.fire('Oops!', err.message, 'error'))
     }
 
     const navLink = <>
-        <ul className="menu menu-horizontal px-1 md:flex gap-1 hidden">
-            <li>
-                <NavLink to={'/'}
-                    className={({ isActive, isPending }) =>
-                        isPending ? 'pending' : isActive ? 'bg-[#a433aa] hover:text-blue-400 font-bold py-2 px-5 rounded-md text-white' : ''}>
-                    Home
-                </NavLink>
-            </li>
-            <li>
-                <NavLink to={'/addProduct'}
-                    className={({ isActive, isPending }) =>
-                        isPending ? 'pending' : isActive ? 'bg-[#a433aa] hover:text-blue-400 font-bold py-2 px-5 rounded-md text-white' : ''}                        >
-                    Add Product
-                </NavLink>
-            </li>
-            <li>
-                <NavLink to={'/myCart'}
-                    className={({ isActive, isPending }) =>
-                        isPending ? 'pending' : isActive ? 'bg-[#a433aa] hover:text-blue-400 font-bold py-2 px-5 rounded-md text-white' : ''}                        >
-                    My Cart
-                </NavLink>
-            </li>
-            <li>
-                <NavLink to={'/register'}
-                    className={({ isActive, isPending }) =>
-                        isPending ? 'pending' : isActive ? 'bg-[#a433aa] hover:text-blue-400 font-bold py-2 px-5 rounded-md text-white' : ''}>
-                    Register
-                </NavLink>
-            </li>
+        <ul className="menu menu-horizontal px-1 lg:flex gap-1 hidden">
+            <NavLink to={'/'}
+                className={({ isActive }) => isActive ? "btn bg-[#fff] text-[16px] font-semibold" : "btn bg-[#555d6655] text-white text-[16px] font-semibold"}>
+                Home
+            </NavLink>
+
+            <NavLink to={'/addProduct'}
+                className={({ isActive }) => isActive ? "btn bg-[#fff] text-[16px] font-semibold" : "btn bg-[#555d6655] text-white text-[16px] font-semibold"}                        >
+                Add Product
+            </NavLink>
+
+            <NavLink to={'/myCart'}
+                className={({ isActive }) => isActive ? "btn bg-[#fff] text-[16px] font-semibold" : "btn bg-[#555d6655] text-white text-[16px] font-semibold"}                        >
+                My Cart
+            </NavLink>
+
+            <NavLink to={'/register'}
+                className={({ isActive }) => isActive ? "btn bg-[#fff] text-[16px] font-semibold" : "btn bg-[#555d6655] text-white text-[16px] font-semibold"}                        >
+                Register
+            </NavLink>
         </ul>
     </>
+
     const navLinkMd = <>
-        <ul className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow rounded-box w-52 bg-slate-400 text-white">
-            <li>
-                <NavLink to={'/'}
-                    className={({ isActive, isPending }) =>
-                        isPending ? 'pending' : isActive ? 'bg-[#a433aa] hover:text-blue-400 font-bold py-2 px-5 rounded-md text-white' : ''}>
-                    Home
-                </NavLink>
-            </li>
-            <li>
-                <NavLink to={'/addProduct'}
-                    className={({ isActive, isPending }) =>
-                        isPending ? 'pending' : isActive ? 'bg-[#a433aa] my-3 hover:text-blue-400 font-bold py-2 px-5 rounded-md text-white' : ''}                        >
-                    Add Product
-                </NavLink>
-            </li>
-            <li>
-                <NavLink to={'/myCart'}
-                    className={({ isActive, isPending }) =>
-                        isPending ? 'pending' : isActive ? 'bg-[#a433aa] hover:text-blue-400 font-bold py-2 px-5 rounded-md text-white' : ''}                        >
-                    My Cart
-                </NavLink>
-            </li>
-            <li>
-                <NavLink to={'/register'}
-                    className={({ isActive, isPending }) =>
-                        isPending ? 'pending' : isActive ? 'bg-[#a433aa] hover:text-blue-400 font-bold py-2 px-5 rounded-md text-white' : ''}>
-                    Register
-                </NavLink>
-            </li>
+        <ul className="menu menu-sm dropdown-content mt-3 z-[1] flex gap-3 shadow rounded-box w-52 bg-slate-400 p-5 text-white">
+            <NavLink to={'/'}
+                className={({ isActive }) => isActive ? "btn bg-[#fff] text-[16px] font-semibold" : "btn bg-[#555d6655] text-white text-[16px] font-semibold"}>
+                Home
+            </NavLink>
+
+            <NavLink to={'/addProduct'}
+                className={({ isActive }) => isActive ? "btn bg-[#fff] text-[16px] font-semibold" : "btn bg-[#555d6655] text-white text-[16px] font-semibold"}                        >
+                Add Product
+            </NavLink>
+
+            <NavLink to={'/myCart'}
+                className={({ isActive }) => isActive ? "btn bg-[#fff] text-[16px] font-semibold" : "btn bg-[#555d6655] text-white text-[16px] font-semibold"}                        >
+                My Cart
+            </NavLink>
+
+            <NavLink to={'/register'}
+                className={({ isActive }) => isActive ? "btn bg-[#fff] text-[16px] font-semibold" : "btn bg-[#555d6655] text-white text-[16px] font-semibold"}                        >
+                Register
+            </NavLink>
         </ul>
     </>
 
@@ -102,23 +85,21 @@ const Header = () => {
     };
 
     return (
-        <div className="max-w-7xl mx-auto sticky top-0 z-50">
-            <div className="navbar">
-                <div className="navbar-start">
-
+        <div className="max-w-7xl mx-auto sticky top-0 z-50 bg-[#8e8e945a]">
+            <div className="navbar p-0 px-4 flex justify-between">
+                <div className="lg:navbar-start lg:w-auto w-3/2">
                     <div className="dropdown">
-                        <label tabIndex={0} className="btn btn-ghost lg:hidden">
-                            <svg xmlns="http://www.w3.org/2000/svg" className="h-10 text-white bg-slate-600 font-black w-8 rounded-lg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+                        <label tabIndex={0} className="btn-ghost lg:hidden">
+                            <svg xmlns="http://www.w3.org/2000/svg" className="h-9" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h8m-8 6h16" /></svg>
                         </label>
                         {navLinkMd}
                     </div>
-                    <Link to='/'><button className="normal-case text-3xl font-bold text-[#6531ae]">Automotive</button></Link>
+                    <Link to='/'><button className="normal-case text-[24px] md:text-3xl font-bold text-[#6531ae] dark:text-indigo-500">Automotive</button></Link>
                 </div>
-                <div className="navbar-center bg-white px-5 rounded-lg lg:flex">
+                <div className="navbar-center lg:mx-auto lg:w-auto rounded-lg lg:flex">
                     {navLink}
                 </div>
-                <div className="navbar-end">
-
+                <div className="lg:navbar-end lg:w-auto w-3/1">
                     {/* Dark Mode button */}
                     <input
                         type="checkbox"
@@ -127,18 +108,35 @@ const Header = () => {
                         onChange={handleToggle}
                     />
 
-                    {user ? <>
-                        <div className="flex flex-col lg:flex-row justify-center text-center items-center">
-                            <button onClick={handleLogout} className="btn btn-primary mx-3">Login Out</button>
-                            <h3 className="font-bold text-green-500 mr-3">{user.displayName}</h3>
-                            <label tabIndex={0} className="btn btn-secondary btn-circle avatar">
-                                <div className="w-10 rounded-full">
-                                    <img src={user.photoURL} />
-                                </div>
-                            </label>
+                    <div onClick={() => setIsOpen(!isOpen)}>
+                        {
+                            user ? <>
+                                <label tabIndex={0} className="btn btn-secondary btn-circle avatar">
+                                    <div className="w-10 rounded-full">
+                                        <label>
+                                            <div>
+                                                <img className="w-10 rounded-full cursor-pointer" src={user?.photoURL} />
+                                            </div>
+                                        </label>
+                                    </div>
+                                </label>
+
+                            </>
+                                : <NavLink to={'/login'}
+                                    className={({ isActive }) => isActive ? "btn bg-[#fff] text-[16px] font-semibold" : "md:btn bg-[#555d6655] text-white md:text-[16px] text-[18px] font-semibold"}                        >
+                                    Sign In
+                                </NavLink>
+                        }
+                    </div>
+                    {user && isOpen && (
+                        <div className='absolute rounded-xl shadow-md w-[40vw] p-2 md:p-2 lg:w-[10vw] mr-2 md:w-[20vw] bg-[#756d7555] right-0 top-20'>
+                            <div className='flex flex-col justify-center items-center'>
+                                <h3 className="font-bold text-center dark:text-white text-red-700 disabled">{user?.displayName}</h3>
+                                <button onClick={handleLogout} className="lg:px-5 px-3 mt-2 hover:bg-gray-500 text-white lg:mt-3 rounded-lg text-[16px] font-bold py-3  bg-violet-400">Login Out</button>
+                            </div>
                         </div>
-                    </>
-                        : <Link to={'/login'}><button className="btn btn-primary mr-3">Login</button></Link>}
+                    )}
+
                 </div>
             </div>
         </div>
