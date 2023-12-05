@@ -1,23 +1,120 @@
+// Import Swiper React components
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
+
+import './styles.css';
+
+// import required modules
+import { Parallax, Pagination, Navigation } from 'swiper/modules';
 
 const Extra = () => {
-    const containerStyle = {
-        backgroundImage: 'url("https://demo.wpautolistings.com/wp-content/uploads/2019/04/2019-mazda-3-sedan-gray-front-quarter-left-400x250.jpg")',
-        backgroundSize: 'cover',
-        backgroundRepeat: 'no-repeat',
-        backgroundPosition: 'center',
-    };
+  
     return (
-        <div>
-            <div style={containerStyle} className="h-[80vh] flex justify-center items-center mb-10 px-8 md:px-0">
-                <div className="md:w-1/2 text-white py-10">
-                    <p className="font-bold text-sm uppercase">Services</p>
-                    <p className="text-3xl font-bold">You Want To Have Your Favorite Car?</p>
-                    <p className="md:text-2xl text-lg mb-10 leading-none">We have a big list of modern & classic cars in both used and new categories.</p>
-                    <a href="#" className="bg-purple-800 py-4 px-8 text-white font-bold uppercase text-xs rounded hover:bg-gray-200 hover:text-gray-800">Contact us</a>
-                </div>
+        <div className='mb-5'>
+          <Swiper
+        style={{
+          '--swiper-navigation-color': '#fff',
+          '--swiper-pagination-color': '#fff',
+        }}
+        speed={600}
+        parallax={true}
+        pagination={{
+          clickable: true,
+        }}
+        navigation={true}
+        modules={[Parallax, Pagination, Navigation]}
+        className="mySwiper"
+      >
+        <div
+            slot="container-start"
+            className="parallax-bg"
+            style={{
+                backgroundImage: 'url(https://img.freepik.com/free-photo/view-3d-car-with-simple-background_23-2150998614.jpg?t=st=1701796484~exp=1701800084~hmac=aac348809d1db7eb0bf6cfcad28ea51108a96589e0b239c11f61670b6285aad8&w=996)',
+            }}
+            data-swiper-parallax="-23%"
+            ></div>
+            <SwiperSlide>
+            <div className="title" data-swiper-parallax="-300">
+              Car
             </div>
+            <div className="subtitle" data-swiper-parallax="-200">
+              new
+            </div>
+            <div className="text-[16px]" data-swiper-parallax="-100">
+              <p>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cumque totam aspernatur est minus quisquam, vitae aliquam dolore quae, sunt aliquid a soluta provident, libero corrupti! Recusandae, enim? Dolorum recusandae porro adipisci, quis eius rerum eligendi tenetur culpa, accusamus ipsa, possimus voluptatem.
+              </p>
+            </div>
+          </SwiperSlide>
+            <SwiperSlide>
+            <div className="title" data-swiper-parallax="-300">
+              Car
+            </div>
+            <div className="subtitle" data-swiper-parallax="-200">
+              new
+            </div>
+            <div className="text-[16px] md:pt-10 pt-0" data-swiper-parallax="-100">
+              <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cumque totam aspernatur est minus quisquam, vitae aliquam dolore quae, sunt aliquid a soluta provident, libero corrupti! Recusandae, enim? Dolorum recusandae porro adipisci, quis eius rerum eligendi tenetur culpa, accusamus ipsa, possimus voluptatem. 
+              </p>
+            </div>
+          </SwiperSlide>
+            <SwiperSlide>
+            <div className="title" data-swiper-parallax="-300">
+              Car
+            </div>
+            <div className="subtitle" data-swiper-parallax="-200">
+              new
+            </div>
+            <div className="text-[16px] md:pt-10 pt-0" data-swiper-parallax="-100">
+              <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cumque totam aspernatur est minus quisquam, vitae aliquam dolore quae, sunt aliquid a soluta provident, libero corrupti! Recusandae, enim? Dolorum recusandae porro adipisci, quis eius rerum eligendi tenetur culpa, accusamus ipsa, possimus voluptatem.
+              </p>
+            </div>
+          </SwiperSlide>
+            <SwiperSlide>
+            <div className="title" data-swiper-parallax="-300">
+              Car
+            </div>
+            <div className="subtitle" data-swiper-parallax="-200">
+              new
+            </div>
+            <div className="text-[16px] md:pt-10 pt-0" data-swiper-parallax="-100">
+              <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cumque totam aspernatur est minus quisquam, vitae aliquam dolore quae, sunt aliquid a soluta provident, libero corrupti! Recusandae, enim? Dolorum recusandae porro adipisci, quis eius rerum eligendi tenetur culpa, accusamus ipsa, possimus voluptatem.
+              </p>
+            </div>
+          </SwiperSlide>
+            <SwiperSlide>
+            <div className="title" data-swiper-parallax="-300">
+              Car
+            </div>
+            <div className="subtitle" data-swiper-parallax="-200">
+              new
+            </div>
+            <div className="text-[16px] md:pt-10 pt-0" data-swiper-parallax="-100">
+              <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cumque totam aspernatur est minus quisquam, vitae aliquam dolore quae, sunt aliquid a soluta provident, libero corrupti! Recusandae, enim? Dolorum recusandae porro adipisci, quis eius rerum eligendi tenetur culpa, accusamus ipsa, possimus voluptatem.
+              </p>
+            </div>
+          </SwiperSlide>
+      </Swiper>
         </div>
     );
 };
 
 export default Extra;
+
+
+
+// export default function App() {
+//   return (
+//     <>
+     
+//     </>
+//   );
+// }

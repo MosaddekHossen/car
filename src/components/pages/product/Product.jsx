@@ -1,4 +1,4 @@
-import Slider from "../home/slider/Slider";
+import Slider from "./slider/Slider";
 import ProductCards from "./productCards/ProductCards";
 
 const Product = () => {

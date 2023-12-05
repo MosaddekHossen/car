@@ -5,7 +5,7 @@ import SingleCar from "./singleCar/SingleCar";
 const Home = () => {
 
     const containerStyle = {
-        backgroundImage: 'url("https://demo.wpautolistings.com/wp-content/uploads/2018/07/gabriel-gurrola-125352-unsplash-min.jpg")',
+        backgroundImage: 'url("https://img.freepik.com/free-photo/modern-car-futuristic-road_23-2151021107.jpg?t=st=1701797946~exp=1701801546~hmac=c3fea2c111d9dd7fd0d9a522a24503631a1eecd5982f97875d180b5f5a7dede8&w=996")',
         backgroundSize: 'cover',
         backgroundRepeat: 'no-repeat',
         backgroundPosition: 'center',

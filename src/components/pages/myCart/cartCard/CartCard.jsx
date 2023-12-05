@@ -42,7 +42,7 @@ const CartCard = ({ brand, brands, setBrands }) => {
         <>
             <div className="card shadow-xl h-full">
                 <figure className="px-2 pt-2">
-                    <img src={image} alt="Car" className="rounded-xl h-[50vh]" />
+                    <img src={image} alt="Car" className="rounded-xl w-full object-cover h-[30vh]" />
                 </figure>
                 <div className="pt-10 pl-10">
                     <p>

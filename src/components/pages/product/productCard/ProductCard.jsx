@@ -1,7 +1,8 @@
 // import { Link } from "react-router-dom";
+import { Rating } from '@smastrom/react-rating';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import ReactStarsRating from 'react-stars-rating';
+import '@smastrom/react-rating/style.css'
 
 const ProductCard = ({ brand }) => {
     const { _id, name, brandName, type, price, rating, image } = brand || {};
@@ -12,25 +13,25 @@ const ProductCard = ({ brand }) => {
                 <figure className="px-2 pt-2">
                     <img src={image} alt="Car" className="rounded-xl h-[50vh]" />
                 </figure>
-                <div className="pt-10 pl-10">
-                    <p>
-                        <ReactStarsRating
-                            value={rating}
-                        />
-                    </p>
+                <div className="pt-10 pl-5 pb-2">
+                    <Rating
+                        style={{ maxWidth: 180 }}
+                        value={rating}
+                        readOnly
+                    />
                 </div>
-                <p className="mx-6 p-1 font-sans text-[18px] font-semibold leading-normal text-[#171715] antialiased opacity-75">
+                <p className="mx-6 p-1 font-sans text-[18px] font-semibold leading-normal text-[#171715] dark:text-white antialiased opacity-75">
                     Name: {name}
                 </p>
-                <p className="mx-6 p-1 mt-3 font-sans text-[18px] font-semibold leading-normal text-[#171715] antialiased opacity-75">
+                <p className="mx-6 p-1 mt-3 font-sans text-[18px] font-semibold leading-normal text-[#171715] dark:text-white antialiased opacity-75">
                     Brand Name: {brandName}
                 </p>
                 <div className="p-6">
                     <div className="mb-2 flex items-center justify-between">
-                        <p className="block font-sans text-base font-medium leading-relaxed text-blue-gray-900 antialiased">
+                        <p className="block font-sans text-base font-medium dark:text-white leading-relaxed text-blue-gray-900 antialiased">
                             Type: {type}
                         </p>
-                        <p className="block font-sans text-base font-medium leading-relaxed text-blue-gray-900 antialiased">
+                        <p className="block font-sans text-base font-medium dark:text-white leading-relaxed text-blue-gray-900 antialiased">
                             Price: {price}$
                         </p>
                     </div>
