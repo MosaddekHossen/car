@@ -18,22 +18,22 @@ const Header = () => {
     const navLink = <>
         <ul className="menu menu-horizontal px-1 lg:flex gap-1 hidden">
             <NavLink to={'/'}
-                className={({ isActive }) => isActive ? "btn bg-[#fff] text-[14px] font-semibold" : "btn bg-[#555d6655] text-white text-[14px] font-semibold"}>
+                className={({ isPending, isActive }) => isPending ? "bg-[#92a1eb] text-white btn text-[14px] font-semibold" : isActive ? "btn bg-[#fff] text-[14px] font-semibold" : "btn bg-[#616d7b81] text-white text-[14px] font-semibold"}>
                 Home
             </NavLink>
 
             <NavLink to={'/addProduct'}
-                className={({ isActive }) => isActive ? "btn bg-[#fff] text-[14px] font-semibold" : "btn bg-[#555d6655] text-white text-[14px] font-semibold"}                        >
+                className={({ isPending, isActive }) => isPending ? "bg-[#92a1eb] text-white btn text-[14px] font-semibold" : isActive ? "btn bg-[#fff] text-[14px] font-semibold" : "btn bg-[#616d7b81] text-white text-[14px] font-semibold"}                        >
                 Add Product
             </NavLink>
 
             <NavLink to={'/myCart'}
-                className={({ isActive }) => isActive ? "btn bg-[#fff] text-[14px] font-semibold" : "btn bg-[#555d6655] text-white text-[14px] font-semibold"}                        >
+                className={({ isPending, isActive }) => isPending ? "bg-[#92a1eb] text-white btn text-[14px] font-semibold" : isActive ? "btn bg-[#fff] text-[14px] font-semibold" : "btn bg-[#616d7b81] text-white text-[14px] font-semibold"}                        >
                 My Cart
             </NavLink>
 
             <NavLink to={'/register'}
-                className={({ isActive }) => isActive ? "btn bg-[#fff] text-[14px] font-semibold" : "btn bg-[#555d6655] text-white text-[14px] font-semibold"}                        >
+                className={({ isPending, isActive }) => isPending ? "bg-[#92a1eb] text-white btn text-[14px] font-semibold" : isActive ? "btn bg-[#fff] text-[14px] font-semibold" : "btn bg-[#616d7b81] text-white text-[14px] font-semibold"}                        >
                 Register
             </NavLink>
         </ul>
@@ -42,22 +42,22 @@ const Header = () => {
     const navLinkMd = <>
         <ul className="menu menu-sm dropdown-content mt-3 z-[1] flex gap-3 shadow rounded-box w-52 bg-slate-400 p-5 text-white">
             <NavLink to={'/'}
-                className={({ isActive }) => isActive ? "btn bg-[#fff] text-[14px] font-semibold" : "btn bg-[#555d6655] text-white text-[14px] font-semibold"}>
+                className={({ isPending, isActive }) => isPending ? "bg-[#92a1eb] text-white btn text-[14px] font-semibold" : isActive ? "btn bg-[#fff] text-[14px] font-semibold" : "btn bg-[#616d7b81] text-white text-[14px] font-semibold"}>
                 Home
             </NavLink>
 
             <NavLink to={'/addProduct'}
-                className={({ isActive }) => isActive ? "btn bg-[#fff] text-[14px] font-semibold" : "btn bg-[#555d6655] text-white text-[14px] font-semibold"}                        >
+                className={({ isPending, isActive }) => isPending ? "bg-[#92a1eb] text-white btn text-[14px] font-semibold" : isActive ? "btn bg-[#fff] text-[14px] font-semibold" : "btn bg-[#616d7b81] text-white text-[14px] font-semibold"}                        >
                 Add Product
             </NavLink>
 
             <NavLink to={'/myCart'}
-                className={({ isActive }) => isActive ? "btn bg-[#fff] text-[14px] font-semibold" : "btn bg-[#555d6655] text-white text-[14px] font-semibold"}                        >
+                className={({ isPending, isActive }) => isPending ? "bg-[#92a1eb] text-white btn text-[14px] font-semibold" : isActive ? "btn bg-[#fff] text-[14px] font-semibold" : "btn bg-[#616d7b81] text-white text-[14px] font-semibold"}                        >
                 My Cart
             </NavLink>
 
             <NavLink to={'/register'}
-                className={({ isActive }) => isActive ? "btn bg-[#fff] text-[14px] font-semibold" : "btn bg-[#555d6655] text-white text-[14px] font-semibold"}                        >
+                className={({ isPending, isActive }) => isPending ? "bg-[#92a1eb] text-white btn text-[14px] font-semibold" : isActive ? "btn bg-[#fff] text-[14px] font-semibold" : "btn bg-[#616d7b81] text-white text-[14px] font-semibold"}                        >
                 Register
             </NavLink>
         </ul>
@@ -123,7 +123,7 @@ const Header = () => {
 
                             </>
                                 : <NavLink to={'/login'}
-                                    className={({ isActive }) => isActive ? "btn bg-[#fff] text-[14px] font-semibold" : "btn bg-[#555d6655] text-white text-[14px] font-semibold"}                      >
+                                    className={({ isPending, isActive }) => isPending ? "bg-[#92a1eb] text-white btn text-[14px] font-semibold" : isActive ? "btn bg-[#fff] text-[14px] font-semibold" : "btn bg-[#616d7b81] text-white text-[14px] font-semibold"}                      >
                                     Sign In
                                 </NavLink>
                         }
