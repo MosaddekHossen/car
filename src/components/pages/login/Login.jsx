@@ -19,7 +19,6 @@ const Login = () => {
                 console.log(res.user)
                 Swal.fire('Good job!', 'Success Sign In!', 'success')
                 e.target.reset();
-                // navigate("/");
                 navigate(location?.state ? location?.state : '/');
             })
             .catch(err => {
