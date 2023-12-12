@@ -7,7 +7,7 @@ const MyCart = () => {
     const [brands, setBrands] = useState([])
 
     useEffect(() => {
-        fetch(`https://57-brand-shop-server-dcrbc5ziv-mosaddek.vercel.app/brands/${user?.email}`)
+        fetch(`https://57-brand-shop-server-co2uy9gl4-mosaddek.vercel.app/brands/${user?.email}`)
             .then(res => res.json())
             .then(data => setBrands(data))
     }, [user?.email])

@@ -16,7 +16,7 @@ const AddProduct = () => {
         // console.log(AddProduct);
 
         // Send data to the server
-        fetch('https://57-brand-shop-server-dcrbc5ziv-mosaddek.vercel.app/brand', {
+        fetch('https://57-brand-shop-server-co2uy9gl4-mosaddek.vercel.app/brand', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
