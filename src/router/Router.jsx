@@ -44,7 +44,6 @@ const Router = createBrowserRouter([
             {
                 path: '/myCart',
                 element: <Private><MyCart></MyCart></Private>,
-                loader: () => fetch('https://57-brand-shop-server-dcrbc5ziv-mosaddek.vercel.app/brand')
             },
             {
                 path: '/login',

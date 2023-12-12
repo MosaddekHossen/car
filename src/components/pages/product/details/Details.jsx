@@ -1,11 +1,51 @@
 // import { element } from "prop-types";
 import { Rating } from "@smastrom/react-rating";
-import { Link, useLoaderData } from "react-router-dom"; // , useParams
+import { useContext } from "react";
+import { useLoaderData } from "react-router-dom"; // , useParams
+import Swal from "sweetalert2";
+import { AuthContext } from "../../../../provider/AuthProvider";
 
 const Details = () => {
     const detailsData = useLoaderData();
+    const { user } = useContext(AuthContext);
+    const { email } = user || {};
+    // console.log(email);
 
     const { name, brandName, type, price, des, rating, image } = detailsData || {};
+
+    const handleAddCart = () => {
+        // console.log(id);
+        const addRequest = {
+            email,
+            name,
+            brandName,
+            type,
+            price,
+            des,
+            rating,
+            image
+        }
+        // console.log(addRequest);
+        fetch('https://57-brand-shop-server-dcrbc5ziv-mosaddek.vercel.app/brands', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(addRequest)
+        })
+            .then(res => res.json())
+            .then(data => {
+                // console.log(data);
+                if (data.insertedId) {
+                    Swal.fire({
+                        title: 'Success!',
+                        text: 'Add car successfully!',
+                        icon: 'success',
+                        confirmButtonText: 'Cool'
+                    })
+                }
+            })
+    }
 
     return (
         <div>
@@ -42,9 +82,7 @@ const Details = () => {
                 <div className="p-6 pt-0">
                     <div className="md:mb-5">
                         <div className="form-control mb-2 lg:mb-0">
-                            <Link to={'/myCart'}>
-                                <input type="submit" className="btn btn-block bg-gray-600 text-white hover:text-blue-600 font-bold" value="See All Car" />
-                            </Link>
+                            <input onClick={() => handleAddCart(detailsData)} type="submit" className="btn btn-block bg-gray-600 text-white hover:text-blue-600 font-bold" value="Add Cart" />
                         </div>
                     </div>
                 </div>
