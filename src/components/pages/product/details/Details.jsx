@@ -26,7 +26,7 @@ const Details = () => {
             image
         }
         // console.log(addRequest);
-        fetch('https://57-brand-shop-server-co2uy9gl4-mosaddek.vercel.app/brands', {
+        fetch('https://57-brand-shop-server-jcvh892nr-mosaddek.vercel.app/brands', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

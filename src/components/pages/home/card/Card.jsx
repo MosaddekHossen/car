@@ -2,8 +2,9 @@ import { Link } from "react-router-dom";
 
 const card = ({ brand }) => {
     const { name, image } = brand || {};
+
     return (
-        <Link to={'/product'}>
+        <Link to={`/${name}`}>
             <div className="card shadow-xl h-[50vh]">
                 <figure className="px-2 pt-2">
                     <img src={image} alt="Car" className="rounded-xl object-cover h-[30vh]" />
