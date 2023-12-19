@@ -93,7 +93,7 @@ const AddProduct = () => {
                             <span className="label-text">Rating</span>
                         </label>
                         <label>
-                            <input type="text" required name="rating" placeholder="Rating" className="input input-bordered w-full" />
+                            <input type="number" max={5} step={1} min={1} required name="rating" placeholder="Rating" className="input input-bordered w-full" />
                         </label>
                     </div>
                 </div>
