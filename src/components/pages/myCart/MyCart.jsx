@@ -35,7 +35,7 @@ const MyCart = () => {
                 </div>
             ) : (
                 <div className="h-[90vh] md:text-5xl text-2xl font-bold flex justify-center items-center">
-                    <h1>No food available!</h1>
+                    <h1>You have not added any vehicles!</h1>
                 </div>
             )}
         </>
